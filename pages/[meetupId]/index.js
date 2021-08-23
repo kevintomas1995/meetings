@@ -41,8 +41,8 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    // wenn eine Id eingebeben wird, die nicht existiert, dann kommt ne 404 Page
-    fallback: false,
+    // wenn eine Id eingebeben wird, die nicht existiert, dann kommt keine 404 Page
+    fallback: 'blocking',
 
     // hier gibt man dynamisch alle Routen an
     paths: meetups.map((meetup) => ({
